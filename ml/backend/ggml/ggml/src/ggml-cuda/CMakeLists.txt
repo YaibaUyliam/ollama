@@ -23,7 +23,7 @@ if (CUDAToolkit_FOUND)
         # The default behavior for a non-native is to build virtual architectures as needed to cover all features needed
         #     for best performance and to also build real architectures for the most commonly used GPUs.
         if (GGML_NATIVE AND CUDAToolkit_VERSION VERSION_GREATER_EQUAL "11.6" AND CMAKE_VERSION VERSION_GREATER_EQUAL "3.24")
-            set(CMAKE_CUDA_ARCHITECTURES "native")
+            set(CMAKE_CUDA_ARCHITECTURES "120")
         elseif(GGML_CUDA_F16 OR GGML_CUDA_DMMV_F16)
             if (CUDAToolkit_VERSION VERSION_GREATER_EQUAL "11.8")
                 set(CMAKE_CUDA_ARCHITECTURES "60-virtual;61-virtual;70-virtual;75-virtual;80-virtual;86-real;89-real")
