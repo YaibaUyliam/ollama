@@ -74,7 +74,7 @@ install(TARGETS ggml-base ${CPU_VARIANTS}
 check_language(CUDA)
 if(CMAKE_CUDA_COMPILER)
     if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.24" AND NOT CMAKE_CUDA_ARCHITECTURES)
-        set(CMAKE_CUDA_ARCHITECTURES "120")
+        set(CMAKE_CUDA_ARCHITECTURES "native")
     endif()
 
     find_package(CUDAToolkit)
